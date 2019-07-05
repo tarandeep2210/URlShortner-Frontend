@@ -6,5 +6,8 @@
                 <button class="input-group-text btn" id="btn1" >Shorten URL</button>
                 </div>
             </div>
+            <h2 *ngIf="shortUrl"  style="text-align: center">
+              Shortened URL : <a href="{{shortUrl}}">{{shortUrl}}</a>
+            </h2>
           </form>
         </div>

@@ -1,4 +1,4 @@
 export interface myURL {
-    url: string;
-  
+    originalUrl: string;
+    shortBaseUrl : string;
   }

@@ -11,6 +11,7 @@ import { myURL } from './url.model';
 })
 export class AppComponent {
   title = 'URlshortner-Frontend';
+  shortUrl: String;
 
   constructor(private service : UrlService){
 
@@ -18,9 +19,12 @@ export class AppComponent {
 
   onSubmit(form: NgForm){
     console.log(form.value.url);
-    let url : myURL = { url : form.value.url}
-    this.service.addURL(url).subscribe(() => {
-      console.log(url);
+    let url : myURL = { originalUrl : form.value.url,
+    shortBaseUrl : "http://localhost:3000/api/item" }
+
+    this.service.addURL(url).subscribe((data) => {
+      console.log(data.shortUrl);
+      this.shortUrl = data.shortUrl;
     });
   }
 }

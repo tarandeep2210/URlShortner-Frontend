@@ -11,10 +11,10 @@ export class UrlService {
 
   constructor(private http: HttpClient) { }
   
-  postUrl : string = 'http://localhost:3000/shorten';
+  postUrl : string = 'http://localhost:3000/api/item';
 
   addURL (url: myURL): Observable<any> {
-    return this.http.post<String>(this.postUrl, url);
+    return this.http.post<myURL>(this.postUrl, url);
       
   }
 }
